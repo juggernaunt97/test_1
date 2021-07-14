@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='list_code_action' model='ir.actions.act_window'>
+        <field name="name">list code</field>
+        <field name="res_model">list.code</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="list code" id="list_code_menu" parent="sale_order_base_menu" action="list_code_action"/>
+
+    <!-- Form View -->
+    <record id="list_code_view_form" model="ir.ui.view">
+        <field name="name">List code Form</field>
+        <field name="model">list.code</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="name_code"/>
+                <field name="date_code"/>
+            </form>
+        </field>
+    </record>
+
+     <!-- Tree(list) View -->
+    <record id="list_code_view_tree" model="ir.ui.view">
+        <field name="name">Code List</field>
+        <field name="model">list.code</field>
+        <field name="arch" type="xml">
+            <tree>
+                <button name="update" type="object" string="Update"/>
+                <field name="name_code"/>
+                <field name="date_code"/>
+                <field name="check_code"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>
